@@ -3,7 +3,7 @@ let navs = [
         name: 'Login',
         locale: 'user.login',
         path: '/user/login',
-        component: './User/Login',
+        component: 'pages/login',
         hideInMenu: true,
     },
     {
@@ -49,6 +49,7 @@ let navs = [
                 path: '/projects/list',
                 locale: 'projects.list',
                 name: 'Projects',
+                component: 'pages/projects/list',
                 icon: 'projects',
                 exact: true,
             },
@@ -56,6 +57,7 @@ let navs = [
                 path: '/projects/:id',
                 locale: 'projects.details',
                 name: 'Project Details',
+                component: 'pages/projects/details',
                 icon: 'details',
                 key: 'details',
                 exact: true,
@@ -65,6 +67,7 @@ let navs = [
                 locale: 'projects.settings',
                 icon: 'settings',
                 name: 'Settings',
+                component: 'pages/projects/details',
                 parentKey: 'details',
                 exact: true,
             },
@@ -72,7 +75,7 @@ let navs = [
     },
     {
         path: '*',
-        component: './404',
+        component: 'pages/pageNotFound',
     },
 ]
 
