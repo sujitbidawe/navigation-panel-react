@@ -9,7 +9,7 @@ function Sidebar(props: any) {
                     .filter((nav) => { return props.navs[nav].name ? nav : null })
                     .map((nav, index) => {
                         return (
-                            <nav className='nav' key={index}
+                            <div className='nav' key={index}
                                 onMouseEnter={(e) => { props.mouseEnter(index) }}
                                 onMouseLeave={(e) => { props.mouseLeave(index) }}
                             >
@@ -17,13 +17,13 @@ function Sidebar(props: any) {
                                 {
                                     (props.navs[nav].routes && props.navs[nav].routes.length && props.navs[nav].isHover) ? Object.keys(props.navs[nav].routes).map((nestedNavs, index) => {
                                         return (
-                                            <nav className='nested-nav' key={index}>
+                                            <div className='nested-nav' key={index}>
                                                 {props.navs[nav].routes[nestedNavs].name}
-                                            </nav>
+                                            </div>
                                         )
                                     }) : null
                                 }
-                            </nav>
+                            </div>
                         )
                     }) : null
             }
