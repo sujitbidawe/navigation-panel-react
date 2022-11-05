@@ -1,4 +1,4 @@
-import './Login.css';
+import './Dashboard.css';
 
 function Login() {
 
