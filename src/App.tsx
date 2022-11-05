@@ -1,7 +1,8 @@
 import './App.css';
 import { _getNavs } from './utils/_DATA.js';
 import { useState, useEffect } from 'react';
-import Sidebar from './components/sidebar/Sidebar';
+import Sidebar from './pages/sidebar/Sidebar';
+import Login from './pages/login/Login';
 
 function App() {
 
@@ -22,7 +23,6 @@ function App() {
 	}, [])
 
 	const mouseEnter = (navIndex: any) => {
-		debugger
 		let tempNavs = Object.assign({}, navs);
 		tempNavs[navIndex].isHover = true;
 		setNavs({ ...tempNavs });
@@ -36,7 +36,17 @@ function App() {
 
 	return (
 		<div className="App">
-			<Sidebar navs={navs} mouseEnter={mouseEnter} mouseLeave={mouseLeave} />
+			<div className='header'>
+				<h3>breadCrumb1</h3>
+				<h3>breadCrumb2</h3>
+				<h3>breadCrumb3</h3>
+			</div>
+			<div className='container'>
+				<Sidebar navs={navs} mouseEnter={mouseEnter} mouseLeave={mouseLeave} />
+				<div className='right-container'>
+					<Login />
+				</div>
+			</div>
 		</div>
 	);
 }
