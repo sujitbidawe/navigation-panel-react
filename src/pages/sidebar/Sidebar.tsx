@@ -10,7 +10,7 @@ function Sidebar(props: any) {
                     .map((nav, index) => {
                         return (
                             <div
-                                className={window.location.pathname.includes(props.navs[nav].path) ? 'nav active' : 'nav'}
+                                className={window.location.pathname.includes(props.navs[nav].path) ? 'nav active-option' : 'nav'}
                                 key={index}
                                 onMouseEnter={(e) => { props.mouseEnter(index) }}
                                 onMouseLeave={(e) => { props.mouseLeave(index) }}
@@ -28,7 +28,7 @@ function Sidebar(props: any) {
                                     (props.navs[nav].routes && props.navs[nav].routes.length && props.navs[nav].isHover) ? Object.keys(props.navs[nav].routes).map((nestedNavs, index) => {
                                         return (
                                             <div
-                                                className={window.location.pathname === (props.navs[nav].routes[nestedNavs].path) ? 'nested-nav active' : 'nested-nav'}
+                                                className={window.location.pathname === (props.navs[nav].routes[nestedNavs].path) ? 'nested-nav active-option' : 'nested-nav'}
                                                 key={index}
                                                 onClick={(e) => { e.stopPropagation(); props.routeClicked(props.navs[nav].routes[nestedNavs]) }}
                                             >
