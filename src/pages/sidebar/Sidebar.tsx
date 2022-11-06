@@ -21,7 +21,7 @@ function Sidebar(props: any) {
                                     (props.navs[nav].routes && props.navs[nav].routes.length && props.navs[nav].isHover) ? Object.keys(props.navs[nav].routes).map((nestedNavs, index) => {
                                         return (
                                             <div
-                                                className={window.location.pathname.includes(props.navs[nav].routes[nestedNavs].path) ? 'nested-nav active' : 'nested-nav'}
+                                                className={window.location.pathname === (props.navs[nav].routes[nestedNavs].path) ? 'nested-nav active' : 'nested-nav'}
                                                 key={index}
                                                 onClick={(e) => { e.stopPropagation(); props.routeClicked(props.navs[nav].routes[nestedNavs]) }}
                                             >
