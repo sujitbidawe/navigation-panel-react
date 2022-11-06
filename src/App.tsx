@@ -22,15 +22,13 @@ function App() {
 
 	useEffect(() => {
 		_getNavs().then((data) => {
-			let data2 = Object.keys(data).map((nav, index) => {
+			let modifiedData = Object.keys(data).map((nav, index) => {
 				let elem: any = data[nav];
-				elem['isSelected'] = false;
 				elem['isHover'] = false;
-				elem['isNested'] = elem.routes && elem.routes.length ? true : false;
 				return elem
 			})
 
-			setNavs({ ...data2 });
+			setNavs({ ...modifiedData });
 		})
 	}, [])
 
