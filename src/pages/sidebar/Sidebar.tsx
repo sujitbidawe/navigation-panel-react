@@ -14,7 +14,7 @@ function Sidebar(props: any) {
                                 key={index}
                                 onMouseEnter={(e) => { props.mouseEnter(index) }}
                                 onMouseLeave={(e) => { props.mouseLeave(index) }}
-                                onClick={(e) => { e.stopPropagation(); props.routeclicked(props.navs[nav]) }}
+                                onClick={(e) => { e.stopPropagation(); props.routeClicked(props.navs[nav]) }}
                             >
                                 {props.navs[nav].name}
                                 {
@@ -23,7 +23,7 @@ function Sidebar(props: any) {
                                             <div
                                                 className={window.location.pathname.includes(props.navs[nav].routes[nestedNavs].path) ? 'nested-nav active' : 'nested-nav'}
                                                 key={index}
-                                                onClick={(e) => { e.stopPropagation(); props.routeclicked(props.navs[nav].routes[nestedNavs]) }}
+                                                onClick={(e) => { e.stopPropagation(); props.routeClicked(props.navs[nav].routes[nestedNavs]) }}
                                             >
                                                 {props.navs[nav].routes[nestedNavs].name}
                                             </div>

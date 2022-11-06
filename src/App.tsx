@@ -46,7 +46,7 @@ function App() {
 		setNavs({ ...tempNavs });
 	}
 
-	const routeclicked = (nav: any) => {
+	const routeClicked = (nav: any) => {
 		navigate(nav.path);
 	}
 
@@ -58,7 +58,7 @@ function App() {
 				<h3>breadCrumb3</h3>
 			</div>
 			<div className='container'>
-				<Sidebar navs={navs} mouseEnter={mouseEnter} mouseLeave={mouseLeave} routeclicked={routeclicked} />
+				<Sidebar navs={navs} mouseEnter={mouseEnter} mouseLeave={mouseLeave} routeClicked={routeClicked} />
 				<div className='right-container'>
 				<Routes>
 					<Route
