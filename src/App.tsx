@@ -3,6 +3,7 @@ import { _getNavs } from './utils/_DATA.js';
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import Sidebar from './pages/sidebar/Sidebar';
+import Breadcrumbs from './pages/breadcrumbs/Breadcrumbs';
 import * as React from 'react';
 const Login = React.lazy(() => import('./pages/login/Login'));
 const Dashboard = React.lazy(() => import('./pages/dashboard/Dashboard'));
@@ -50,11 +51,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<div className='header'>
-				<h3>breadCrumb1</h3>
-				<h3>breadCrumb2</h3>
-				<h3>breadCrumb3</h3>
-			</div>
+			<Breadcrumbs navs={navs}></Breadcrumbs>
 			<div className='container'>
 				<Sidebar navs={navs} mouseEnter={mouseEnter} mouseLeave={mouseLeave} routeClicked={routeClicked} />
 				<div className='right-container'>
