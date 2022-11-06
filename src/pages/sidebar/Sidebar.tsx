@@ -16,7 +16,14 @@ function Sidebar(props: any) {
                                 onMouseLeave={(e) => { props.mouseLeave(index) }}
                                 onClick={(e) => { e.stopPropagation(); props.routeClicked(props.navs[nav]) }}
                             >
-                                {props.navs[nav].name}
+                                <div className='nav-details'>
+                                    {
+                                        (
+                                            props.navs[nav].icon && <img src={`/images/${props.navs[nav].icon}.png`} alt={props.navs[nav].name} className='icon' />
+                                        )
+                                    }
+                                    <span>{props.navs[nav].name}</span>
+                                </div>
                                 {
                                     (props.navs[nav].routes && props.navs[nav].routes.length && props.navs[nav].isHover) ? Object.keys(props.navs[nav].routes).map((nestedNavs, index) => {
                                         return (
@@ -25,7 +32,14 @@ function Sidebar(props: any) {
                                                 key={index}
                                                 onClick={(e) => { e.stopPropagation(); props.routeClicked(props.navs[nav].routes[nestedNavs]) }}
                                             >
-                                                {props.navs[nav].routes[nestedNavs].name}
+                                                <div className='nav-details'>
+                                                    {
+                                                        (
+                                                            props.navs[nav].routes[nestedNavs].icon && <img src={`/images/${props.navs[nav].routes[nestedNavs].icon}.png`} alt={props.navs[nav].routes[nestedNavs].name} className='icon' />
+                                                        )
+                                                    }
+                                                    <span>{props.navs[nav].routes[nestedNavs].name}</span>
+                                                </div>
                                             </div>
                                         )
                                     }) : null
